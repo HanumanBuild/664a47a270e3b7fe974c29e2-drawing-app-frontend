@@ -38,3 +38,5 @@ const DrawingCanvas = () => {
 };
 
 export default DrawingCanvas;
+
+export default DrawingCanvas;
