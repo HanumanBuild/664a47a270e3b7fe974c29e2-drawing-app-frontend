@@ -5,6 +5,7 @@ import Signup from './pages/Signup';
 import DrawingCanvas from './pages/DrawingCanvas';
 import Navbar from './components/Navbar';
 
+// Function App
 function App() {
   return (
     <Router>
@@ -20,4 +21,5 @@ function App() {
   );
 }
 
+// Export App
 export default App;
