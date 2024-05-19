@@ -30,13 +30,11 @@ const DrawingCanvas = () => {
   };
 
   return (
-    <div className="flex flex-col items-center h-screen">
+    <div className="flex flex-col items-center h-screen bg-gray-100">
       <canvas ref={canvasRef} width={800} height={600} className="border border-gray-300 mb-4"></canvas>
-      <button onClick={saveDrawing} className="bg-blue-500 text-white p-2 rounded">Save Drawing</button>
+      <button onClick={saveDrawing} className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Save Drawing</button>
     </div>
   );
 };
-
-export default DrawingCanvas;
 
 export default DrawingCanvas;

@@ -8,7 +8,8 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post(`${process.env.REACT_APP_DRAWING_APP_BACKEND_URL}/api/auth/login`, { email, password });
+      const response = await axios.post(`${process.env.DRAWING_APP_BACKEND_URL}/api/auth/login`, { email, password });
+      localStorage.setItem('token', response.data.token);
       console.log(response.data);
     } catch (error) {
       console.error(error);
@@ -16,9 +17,9 @@ const Login = () => {
   };
 
   return (
-    <div className="flex justify-center items-center h-screen">
+    <div className="flex justify-center items-center h-screen bg-gray-100">
       <form onSubmit={handleSubmit} className="bg-white p-6 rounded shadow-md w-full max-w-sm">
-        <h2 className="text-2xl mb-4">Login</h2>
+        <h2 className="text-2xl mb-4 text-center text-blue-500">Login</h2>
         <div className="mb-4">
           <label className="block text-gray-700">Email</label>
           <input
@@ -39,12 +40,10 @@ const Login = () => {
             required
           />
         </div>
-        <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded">Login</button>
+        <button type="submit" className="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600">Login</button>
       </form>
     </div>
   );
 };
-
-export default Login;
 
 export default Login;
